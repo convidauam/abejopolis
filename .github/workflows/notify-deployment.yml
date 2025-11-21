@@ -6,11 +6,12 @@ on:
 
 jobs:
   notify-deploy:
+    name: Notify to Deployment Repo
     runs-on: ubuntu-latest
     steps:
       - name: Trigger to repo deploy workflow
         run: |
-          echo "🚀 Disparando deploy en repositorio del deployment ..."
+          echo "Notifying deployment repository... 📡"
           curl --request POST \
             --url https://api.github.com/repos/convidauam/convida_deployment/dispatches \
             --header 'Accept: application/vnd.github+json' \
@@ -18,5 +19,5 @@ jobs:
             --header 'Content-Type: application/json' \
             --header 'X-GitHub-Api-Version: 2022-11-28' \
             --data '{
-            "event_type": "deploy-trigger"
-          }'
+              "event_type": "deploy-trigger"
+            }'
