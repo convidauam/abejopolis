@@ -19,5 +19,8 @@ jobs:
             --header 'Content-Type: application/json' \
             --header 'X-GitHub-Api-Version: 2022-11-28' \
             --data '{
-              "event_type": "deploy-trigger"
+              "event_type": "trigger-from-abejopolis",
+              "client_payload": {
+                "action": "deploy"
+              }
             }'
